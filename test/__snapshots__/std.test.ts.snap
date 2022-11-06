@@ -1,0 +1,75 @@
+// Vitest Snapshot v1
+
+exports[`std::datetime > it does the correct checks 1`] = `
+[
+  {
+    "kind": "regex",
+    "regex": /\\^\\\\d\\{4\\}-\\\\d\\{2\\}-\\\\d\\{2\\}\\(T\\\\d\\{2\\}:\\\\d\\{2\\}:\\\\d\\{2\\}\\(\\\\\\.\\\\d\\{3\\}\\)\\?\\)\\?Z\\?\\$/,
+  },
+]
+`;
+
+exports[`std::int16 > it does the correct checks 1`] = `
+[
+  {
+    "kind": "int",
+    "message": undefined,
+  },
+  {
+    "inclusive": true,
+    "kind": "min",
+    "message": undefined,
+    "value": 0,
+  },
+  {
+    "inclusive": true,
+    "kind": "max",
+    "message": undefined,
+    "value": 65535,
+  },
+]
+`;
+
+exports[`std::int32 > it does the correct checks 1`] = `
+[
+  {
+    "kind": "int",
+    "message": undefined,
+  },
+  {
+    "inclusive": true,
+    "kind": "min",
+    "message": undefined,
+    "value": 0,
+  },
+  {
+    "inclusive": true,
+    "kind": "max",
+    "message": undefined,
+    "value": 2147483647,
+  },
+]
+`;
+
+exports[`std::int64 > it does the correct checks 1`] = `
+[
+  {
+    "kind": "int",
+    "message": undefined,
+  },
+  {
+    "inclusive": true,
+    "kind": "min",
+    "message": undefined,
+    "value": 0,
+  },
+]
+`;
+
+exports[`std::uuid > it does the correct checks 1`] = `
+[
+  {
+    "kind": "uuid",
+  },
+]
+`;

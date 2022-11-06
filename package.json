@@ -1,0 +1,31 @@
+{
+  "name": "edgedb-zod",
+  "author": "Sikari",
+  "license": "MIT",
+  "version": "0.0.0",
+  "description": "Creates Zod schemas for your EdgeDB types",
+  "bin": "dist/cli.js",
+  "main": "dist/index.js",
+  "scripts": {
+    "gen": "tsx src/cli.ts",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "test": "vitest --run --coverage"
+  },
+  "dependencies": {
+    "edgedb": "^1.0.0",
+    "yargs": "^17.6.0",
+    "zod": "^3.19.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.7",
+    "@types/yargs": "^17.0.13",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "@vitest/coverage-c8": "^0.24.3",
+    "eslint": "^8.14.0",
+    "tsx": "^3.10.4",
+    "typescript": "^4.8.4",
+    "vitest": "^0.24.3"
+  }
+}

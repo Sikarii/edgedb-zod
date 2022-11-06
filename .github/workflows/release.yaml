@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  test:
+    name: Test
+    uses: "./.github/workflows/test.yaml"
+
+  publish:
+    name: Publish
+    needs: [test]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup NodeJS 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install NodeJS dependencies
+        run: "npm ci"
+
+      - name: Build project
+        run: "npm run build"
+
+      - name: Invoke npm version
+        run: "npm version ${{ github.event.release.tag_name }} --no-git-tag-version"
+
+      - if: ${{ github.event.release.prerelease == false }}
+        name: Publish to NPM latest tag
+        run: "npm publish --tag latest"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - if: ${{ github.event.release.prerelease == true }}
+        name: Publish to NPM beta tag
+        run: "npm publish --tag beta"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

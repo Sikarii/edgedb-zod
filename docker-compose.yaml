@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  edgedb:
+    image: edgedb/edgedb:2.5
+    restart: unless-stopped
+    environment:
+      EDGEDB_SERVER_PASSWORD: edgedb
+      EDGEDB_SERVER_ADMIN_UI: enabled
+      EDGEDB_SERVER_SECURITY: insecure_dev_mode
+    volumes:
+      - "./dbschema:/dbschema"
+      - "./data/edgedb:/var/lib/edgedb/data"
+    ports:
+      - "5858:5656"

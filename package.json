@@ -1,15 +1,16 @@
 {
   "name": "edgedb-zod",
-  "author": "Sikari",
+  "author": "Sikarii",
   "license": "MIT",
   "version": "0.0.0",
   "description": "Creates Zod schemas for your EdgeDB types",
   "bin": "dist/cli.js",
   "main": "dist/index.js",
   "files": ["dist"],
+  "keywords": ["edgedb", "zod", "schema", "generator"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sikarii/edgedb-zod"
+    "url": "https://github.com/Sikarii/edgedb-zod.git"
   },
   "scripts": {
     "gen": "tsx src/cli.ts",

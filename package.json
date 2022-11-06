@@ -6,6 +6,11 @@
   "description": "Creates Zod schemas for your EdgeDB types",
   "bin": "dist/cli.js",
   "main": "dist/index.js",
+  "files": ["dist"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sikarii/edgedb-zod"
+  },
   "scripts": {
     "gen": "tsx src/cli.ts",
     "dev": "tsx watch src/index.ts",
